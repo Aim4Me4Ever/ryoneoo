@@ -258,3 +258,105 @@ function themetbtcol(){
     localStorage.setItem("customthemetbt", themetbtcolval);
     inputtbt.setAttribute("placeholder", ctbtget);
 }
+
+//Right click menu
+function rightclick() {
+    rc = document.getElementById("right-click");
+    rc.style.setProperty("display", "block")
+}
+
+document.onclick = hideMenu; 
+document.oncontextmenu = rightClick; 
+
+ function hideMenu() { 
+     document.getElementById("right-click").style.display = "none" 
+ } 
+
+ function rightClick(e) { 
+     e.preventDefault(); 
+
+     if (document.getElementById("right-click") .style.display == "block"){ 
+         hideMenu(); 
+     }else{ 
+         var menu = document.getElementById("right-click")      
+         menu.style.display = 'block'; 
+         menu.style.left = e.pageX + "px"; 
+         menu.style.top = e.pageY + "px"; 
+     } 
+ } 
+
+////Right click reload option
+function o1() {
+    window.location.reload();
+}
+
+function o2(text) {
+    const elem = document.createElement('textarea');
+    elem.value = text;
+    document.body.appendChild(elem);
+    elem.select();
+    document.execCommand('copy');
+    document.body.removeChild(elem);
+ }
+//Lessons part
+var subject = "cs"
+
+function submath() {
+    lessonsq = mathquestions;
+    lessonsa = mathanswers;
+    que = lessonsa[arr];
+    document.getElementById("question").innerHTML = lessonsq[arr];
+    arr = Math.floor(Math.random() * lessonsq.length);
+    var subject = "cs"
+    document.getElementById("qtitle").innerHTML = "Maths"
+} 
+
+function subcs() {
+    lessonsq = csquestions;
+    lessonsa = csanswers;
+    que = lessonsa[arr];
+    document.getElementById("question").innerHTML = lessonsq[arr];
+    var subject = "maths"
+    document.getElementById("qtitle").innerHTML = "CS"
+}
+
+var lessonsq = csquestions;
+var lessonsa = csanswers;
+
+var arr = Math.floor(Math.random() * lessonsq.length)
+ans = "correct"
+que = lessonsa[arr];
+ansd = document.getElementById("answer").value;
+
+function question() {
+    ansd = document.getElementById("answer").value;
+    if(ansd === que) {
+        var arr = Math.floor(Math.random() * lessonsq.length)
+        document.getElementById("question").innerHTML = lessonsq[arr];
+        que = lessonsa[arr];
+        document.getElementById("aaa").innerHTML = "";
+        document.getElementById("wrong").style.setProperty("display", "none");
+        document.getElementById("va").style.setProperty("display", "none");
+        document.getElementById("answer").value = "";
+    }
+    else {
+        document.getElementById("wrong").style.setProperty("display", "block");
+        document.getElementById("va").style.setProperty("display", "block");
+        ans = "wrong";
+    }
+}
+
+//Enter key pressed in q&a 
+function qnaa(event) {
+    event.preventDefault();
+    question();
+}
+
+//View answers 
+function va() {
+    document.getElementById("aaa").innerHTML = que;
+    document.getElementById("answer").value = que;
+    setTimeout(function(){
+        question()
+    }, 2200); 
+}

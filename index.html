@@ -18,7 +18,7 @@
     <div class='container'>
         <ul class="navibar">
             <li><a onclick="page1()">Home</a></li>
-            <li><a onclick="page2()">News</a></li>
+            <li><a onclick="page2()">Lessons</a></li>
             <li><a onclick="page3()">Media</a></li>
             <li><a onclick="page4()">Settings</a></li>
         </ul>
@@ -28,7 +28,7 @@
     <div style="margin-left:25%;padding:1px 16px;height:1000px;" id="page1" style="display: none;">
     <h2>Home</h2>
     <p>
-        Hello, welcome to website. I am Home click on the navigation buttons to go to another page. Bye Bye. Yes<br>
+        Welcome to ryoneoo.xyz! This website is a static site where I experiment html, css and javascript. Go to <a href="https://ryoneoo.com">ryoneoo.com</a> for a stable dynamic site.<br>
     </p><br>
     <div class="loader--style5">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -59,8 +59,27 @@
 
     <!---News Tab-->
     <div style="margin-left:25%;padding:1px 16px;height:1000px;display: none;" id="page2">
-        <h2>News</h2>
-        <p>Breaking News! There are people living on Earth!!</p>
+        <h2>Lessons</h2>
+        <p>Notes to learn from and Q&As to learn faster while learning coding.</p>
+        <div class="dropdown">
+            <div class="dropbtn dd">Choose Subject</div>
+            <div class="dropdown-content">
+              <a onclick="subcs()">CS</a>
+              <a onclick="submath()">Maths</a>
+              <a class = "disable">ICT</a>
+              <a class = "disable">Physics</a>
+              <a class = "disable">A Maths</a>
+            </div>
+          </div>
+        <div>
+            <form id="qnaform" onsubmit="qnaa(event)" autocomplete="off">
+                <label for="qnaform" id = "qtitle" style = "font-weight: bold;text-decoration: underline;"></label><p id = "question"></p>
+                <p id = "aaa"></p>
+                <input id = "answer">
+                <p id = "wrong">Incorrect Answer! Try Again.</p><div id = "va" onclick="va()">View Answer</div>
+                <div class = "dd" id = "qnabtn" onclick="question()">Submit</div>
+            </form>
+        </div>
     </div>
 
     <!---Media Tab-->
@@ -73,13 +92,13 @@
         <img src="" id="image">
 
         <h3>Videos</h3>
-        <div class = "vidbuttons"onclick = "hangout()">6_8 hangout vlog-))</div>
+        <div class = "vidbuttons"onclick = "hangout()">Video 1</div>
         <video class = "6-8-hangout vids" id = "6-8-hangout" height="240" width="auto" controls>
-            <source src="https://ryoneoo.com/6_8 hangout vlog-)).mp4" type="video/mp4">
+            <source src="" type="video/mp4">
         </video>
-        <div class = "vidbuttons" onclick = "subunit()">The new subunit of neomu squad HEHE ENJOY!!</div>
+        <div class = "vidbuttons" onclick = "subunit()">Video 2</div>
         <video class = "subunit vids" id = "subunit" height="240" width="auto" controls>
-            <source src="https://ryoneoo.com/The new subunit of neomu squad HEHE ENJOY!!.mp4" type="video/mp4">
+            <source src="" type="video/mp4">
         </video>
 
 
@@ -112,17 +131,22 @@
             <div class = "dd" type="button" onclick="themetbtcol()">Change Theme Top Bar Text Color</div>
         </div>
     </p>
-
-        <div>Go to <a href="https://ryoneoo.com">ryoneoo.com</a> for stable site since this is an experimental site.</div>
+        <div>Go to <a href="https://ryoneoo.xyz">ryoneoo.com</a> for a stable site since this is an experimental site.</div>
         <div class = "dd" onclick="resetter()" style="background-color: #ff5e5e;">Reset Settings</div>
     </div>
 
     <link rel="icon" type="image/ico" href="favicon.ico"/>
+    <script src="lessons.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    
+
+
 </body>
+<div id = "right-click">
+    <div class = "option o1" onclick="o1()">Reload</div>
+    <!---<div class = "option o2" onclick="o2()">Copy</div>--->
+</div>
 </html>
