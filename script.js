@@ -323,6 +323,17 @@ function subcs() {
     document.getElementById("morsecodetable").style.setProperty("display", "none");
     document.getElementById("morsecodetabletoggle").style.setProperty("display", "none");
 }
+
+function subphysics() {
+    lessonsq = physicsquestions;
+    lessonsa = physicsanswers;
+    que = lessonsa[arr];
+    document.getElementById("question").innerHTML = lessonsq[arr];
+    var subject = "physics"
+    document.getElementById("qtitle").innerHTML = "Physics"
+    document.getElementById("morsecodetable").style.setProperty("display", "none");
+    document.getElementById("morsecodetabletoggle").style.setProperty("display", "none");
+}
 //Morse Code Table Toggler
 function submc() {
     lessonsq = mcquestions;
