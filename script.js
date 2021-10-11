@@ -1,26 +1,5 @@
 var r = document.querySelector(':root');
 
-function darkmode() {
-    r.style.setProperty('--navitcol', '#f1f1f1');
-    r.style.setProperty('--navicol', '#1a1a1a');
-    r.style.setProperty('--settingcol', '#E3DCC2');
-    r.style.setProperty('--chatcol', '#2c2c2c');
-    r.style.setProperty('--rancol', '#2e2e2b');
-    var element = document.body;
-    element.className = "darkmode";
-    return show('lightmodee', 'darkmodee')
-}
-function lightmode() {
-    r.style.setProperty('--navicol', '#f1f1f1');
-    r.style.setProperty('--navitcol', '#010101');
-    r.style.setProperty('--settingcol', '#2e2e2b');
-    r.style.setProperty('--chatcol', '#ffffff');
-    r.style.setProperty('--rancol', '#E3DC95');
-    var element = document.body;
-    element.className = "lightmode";
-    return show('darkmodee', 'lightmodee')
-}
-
 //Javascript Navigation
 function show(shown, hidden) {
     document.getElementById(shown).style.display='block';
@@ -28,26 +7,38 @@ function show(shown, hidden) {
     return false;
 }
 
+function active(activec, notactivec, notactivec2, notactivec3) {
+    document.getElementById(activec).classList.add("active")
+    document.getElementById(notactivec).classList.remove("active")
+    document.getElementById(notactivec2).classList.remove("active")
+    document.getElementById(notactivec3).classList.remove("active")
+}
+
+
 var page = localStorage.getItem("page")
 if(page === "1") {
     page11()
     page12()
     page13()
+    active('p1', 'p2', 'p3', 'p4')
 }
 else if(page === "2") {
     page21()
     page22()
     page23()
+    active('p2', 'p1', 'p3', 'p4')
 }
 else if(page === "3") {
     page31()
     page32()
     page33()
+    active('p3', 'p2', 'p1', 'p4')
 }
 else if(page === "4") {
     page41()
     page42()
     page43()
+    active('p4', 'p2', 'p3', 'p1')
 }
 
 
@@ -56,6 +47,7 @@ function page1() {
     page12()
     page13()
     localStorage.setItem("page", "1")
+    active('p1', 'p2', 'p3', 'p4')
 }function page11() {
     return show('page1', 'page2');
 }function page12() {
@@ -69,6 +61,7 @@ function page2() {
     page22()
     page23()
     localStorage.setItem("page", "2")
+    active('p2', 'p1', 'p3', 'p4')
 }function page21() {
     return show('page2', 'page1');
 }function page22() {
@@ -82,6 +75,7 @@ function page3() {
     page32()
     page33()
     localStorage.setItem("page", "3")
+    active('p3', 'p2', 'p1', 'p4')
 }function page31() {
     return show('page3', 'page2');
 }function page32() {
@@ -95,6 +89,7 @@ function page4() {
     page42()
     page43()
     localStorage.setItem("page", "4")
+    active('p4', 'p2', 'p3', 'p1')
 }function page41() {
     return show('page4', 'page2');
 }function page42() {
@@ -163,7 +158,6 @@ function changeThemeToDark(){
     document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("data-theme", "dark");
 }
-
 
 function changeThemeToLight(){
     document.documentElement.setAttribute("data-theme", "light");
