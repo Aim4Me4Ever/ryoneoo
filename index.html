@@ -30,7 +30,7 @@
     <div style="margin-left:25%;padding:1px 16px;height:1000px;" id="page1" style="display: none;">
     <h2>Home</h2>
     <p>
-        Welcome to ryoneoo.xyz! This website is where I experiment code so go to<a href="https://ryoneoo.com">ryoneoo.com</a> for a more stable site.<br>
+        Welcome to ryoneoo.xyz! This website is where I experiment code so go to <a href="https://ryoneoo.com">ryoneoo.com</a> for a more stable site.<br>
     </p><br>
     <div class="loader--style5">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -59,7 +59,7 @@
     <br>
     </div>
 
-    <!---News Tab-->
+    <!---Lessons Tab-->
     <div style="margin-left:25%;padding:1px 16px;height:1000px;display: none;" id="page2">
         <h2>Lessons</h2>
         <p>Notes to learn from and Q&As to learn faster while learning coding.</p>
@@ -224,20 +224,30 @@
     <p>
        
         <div>
+            <form onsubmit="bg(event)" autocomplete="off">
             <input type="text" id="themebgid">
             <div class = "dd"  onclick="themebgcol();">Change Theme Background Color</div>
-
+            </form>
+            
+            <form onsubmit="txt(event)" autocomplete="off">
             <input type = 'text' id = 'themetid' >
             <div class = "dd" type="button" onclick="themetcol()">Change Theme Text Color</div>
-
+            </form>
+            
+            <form onsubmit="nav(event)" autocomplete="off">
             <input type = 'text' id = 'themenbid' >
             <div class = "dd" type="button" onclick="themenbcol()">Change Theme Navigation Bar Color</div>
+            </form>
 
+            <form onsubmit="topbar(event)" autocomplete="off">
             <input type = 'text' id = 'themetbid' >
             <div class = "dd" type="button" onclick="themetbcol()">Change Theme Top Bar Color</div>
+            </form>
 
+            <form onsubmit="topbartxt(event)" autocomplete="off">
             <input type = 'text' id = 'themetbtid' >
             <div class = "dd" type="button" onclick="themetbtcol()">Change Theme Top Bar Text Color</div>
+            </form>
         </div>
     </p>
         <div>Go to <a href="https://ryoneoo.xyz">ryoneoo.xyz</a> for experimental features.</div>

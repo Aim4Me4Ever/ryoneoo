@@ -396,3 +396,29 @@ function va() {
         question()
     }, 2200); 
 }
+
+//Enter key press settings
+function bg(event) {
+    event.preventDefault();
+    themebgcol();
+}
+
+function txt(event) {
+    event.preventDefault();
+    themetcol();
+}
+
+function nav(event) {
+    event.preventDefault();
+    themenbcol();
+}
+
+function topbar(event) {
+    event.preventDefault();
+    themetbcol();
+}
+
+function topbartxt(event) {
+    event.preventDefault();
+    themetbtcol();
+}
