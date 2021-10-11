@@ -28,10 +28,34 @@ function show(shown, hidden) {
     return false;
 }
 
+var page = localStorage.getItem("page")
+if(page === "1") {
+    page11()
+    page12()
+    page13()
+}
+else if(page === "2") {
+    page21()
+    page22()
+    page23()
+}
+else if(page === "3") {
+    page31()
+    page32()
+    page33()
+}
+else if(page === "4") {
+    page41()
+    page42()
+    page43()
+}
+
+
 function page1() {
     page11()
     page12()
     page13()
+    localStorage.setItem("page", "1")
 }function page11() {
     return show('page1', 'page2');
 }function page12() {
@@ -44,6 +68,7 @@ function page2() {
     page21()
     page22()
     page23()
+    localStorage.setItem("page", "2")
 }function page21() {
     return show('page2', 'page1');
 }function page22() {
@@ -56,6 +81,7 @@ function page3() {
     page31()
     page32()
     page33()
+    localStorage.setItem("page", "3")
 }function page31() {
     return show('page3', 'page2');
 }function page32() {
@@ -68,6 +94,7 @@ function page4() {
     page41()
     page42()
     page43()
+    localStorage.setItem("page", "4")
 }function page41() {
     return show('page4', 'page2');
 }function page42() {
@@ -299,7 +326,19 @@ function o2(text) {
     document.body.removeChild(elem);
  }
 //Lessons part
-var subject = "cs"
+var sub = localStorage.getItem("subject")
+if(sub === "maths"){
+    submath()
+}
+else if(sub === "cs"){
+    subcs()
+}
+else if(sub === "physics"){
+    subphysics()
+}
+else if(sub === "morse"){
+    submc()
+}
 
 function submath() {
     lessonsq = mathquestions;
@@ -307,10 +346,10 @@ function submath() {
     que = lessonsa[arr];
     document.getElementById("question").innerHTML = lessonsq[arr];
     arr = Math.floor(Math.random() * lessonsq.length);
-    var subject = "cs"
     document.getElementById("qtitle").innerHTML = "Maths"
     document.getElementById("morsecodetable").style.setProperty("display", "none");
     document.getElementById("morsecodetabletoggle").style.setProperty("display", "none");
+    localStorage.setItem("subject", "maths")
 } 
 
 function subcs() {
@@ -318,10 +357,10 @@ function subcs() {
     lessonsa = csanswers;
     que = lessonsa[arr];
     document.getElementById("question").innerHTML = lessonsq[arr];
-    var subject = "maths"
     document.getElementById("qtitle").innerHTML = "CS"
     document.getElementById("morsecodetable").style.setProperty("display", "none");
     document.getElementById("morsecodetabletoggle").style.setProperty("display", "none");
+    localStorage.setItem("subject", "cs")
 }
 
 function subphysics() {
@@ -329,10 +368,10 @@ function subphysics() {
     lessonsa = physicsanswers;
     que = lessonsa[arr];
     document.getElementById("question").innerHTML = lessonsq[arr];
-    var subject = "physics"
     document.getElementById("qtitle").innerHTML = "Physics"
     document.getElementById("morsecodetable").style.setProperty("display", "none");
     document.getElementById("morsecodetabletoggle").style.setProperty("display", "none");
+    localStorage.setItem("subject", "physics")
 }
 //Morse Code Table Toggler
 function submc() {
@@ -340,9 +379,9 @@ function submc() {
     lessonsa = mcanswers;
     que = lessonsa[arr];
     document.getElementById("question").innerHTML = lessonsq[arr];
-    var subject = "morse";
     document.getElementById("qtitle").innerHTML = "Morse Code";
     document.getElementById("morsecodetabletoggle").style.setProperty("display", "block");
+    localStorage.setItem("subject", "morse")
 }
 
 mctable = document.getElementById("morsecodetable").style;
